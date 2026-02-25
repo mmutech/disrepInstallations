@@ -1,0 +1,198 @@
+.dashboard {
+  background-color: #f5f7fa;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px 100px;
+  background-color: white;
+  border-bottom: 1px solid #e9ecef;
+  box-sizing: border-box;
+}
+
+.dashboard-header > div {
+  flex: 1;
+}
+
+.dashboard-header h1 {
+  font-size: 32px;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.dashboard-subtitle {
+  font-size: 15px;
+  color: #666;
+  margin: 0;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 20px 100px;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.section-title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.export-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.csv-btn {
+  background-color: #27ae60;
+  color: white;
+}
+
+.csv-btn:hover {
+  background-color: #229954;
+  transform: translateY(-2px);
+}
+
+.excel-btn {
+  background-color: #2980b9;
+  color: white;
+}
+
+.excel-btn:hover {
+  background-color: #1f618d;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+  .dashboard-content {
+    padding: 25px 20px;
+  }
+
+  .stats-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .dashboard-header h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 0;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    padding: 20px 15px;
+    gap: 15px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 24px;
+  }
+
+  .dashboard-content {
+    padding: 20px 15px;
+  }
+
+  .logout-btn {
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .export-buttons {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .export-btn {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    padding: 15px 10px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 22px;
+  }
+
+  .dashboard-content {
+    padding: 15px 10px;
+  }
+
+  .logout-btn {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+
+  .export-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .export-buttons {
+    gap: 8px;
+  }
+}
