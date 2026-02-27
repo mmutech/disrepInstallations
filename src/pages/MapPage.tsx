@@ -94,7 +94,7 @@ const MapPage: React.FC = () => {
     const map = mapInstance.current
 
     // Clear existing markers
-    map.eachLayer((layer) => {
+    map.eachLayer((layer: L.Layer) => {
       // Keep tile layer (has getTileUrl)
       // @ts-ignore
       if ((layer as any).getTileUrl) return

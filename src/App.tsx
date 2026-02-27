@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import LoginPage from './pages/LoginPage'
@@ -29,7 +29,7 @@ function AppRouter() {
     return <LoginPage onLoginSuccess={onLoginSuccess} />
   }
 
-  const RequireAuth = ({ children }: { children: JSX.Element }) => {
+  const RequireAuth = ({ children }: { children: React.ReactNode }) => {
     if (!isLoggedIn) return <Navigate to="/login" replace />
     return children
   }

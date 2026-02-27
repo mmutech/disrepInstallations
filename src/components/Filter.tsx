@@ -20,9 +20,10 @@ interface FilterProps {
   onFilterChange: (filters: Record<string, string | boolean>) => void
   onSearch?: (filters: Record<string, string | boolean>) => void
   showSearchButton?: boolean
+  onReset?: () => void
 }
 
-function Filter({ filters, onFilterChange, onSearch, showSearchButton = false }: FilterProps) {
+function Filter({ filters, onFilterChange, onSearch, showSearchButton = false, onReset }: FilterProps) {
   const [filterValues, setFilterValues] = useState<Record<string, string | boolean>>({})
 
   const handleChange = (filterId: string, value: string | boolean) => {
@@ -36,6 +37,7 @@ function Filter({ filters, onFilterChange, onSearch, showSearchButton = false }:
 
   const handleReset = () => {
     setFilterValues({})
+    onReset?.()
     if (!showSearchButton) {
       onFilterChange({})
     } else if (onSearch) {

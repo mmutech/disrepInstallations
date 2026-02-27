@@ -37,7 +37,14 @@ apiClient.interceptors.request.use(
       
       // Ensure headers object exists
       if (!config.headers) {
-        config.headers = {}
+        config.headers = {} as any
+      } else if (typeof config.headers === 'object' && !('set' in config.headers)) {
+        // If headers is a plain object, create a new object from it
+        const plainHeaders = config.headers
+        config.headers = {} as any
+        for (const [key, value] of Object.entries(plainHeaders)) {
+          if (value) (config.headers as any)[key] = value
+        }
       }
       
       if (token) {
