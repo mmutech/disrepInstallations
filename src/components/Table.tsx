@@ -16,6 +16,8 @@ interface TableProps {
   columns: Column[]
   data: TableData[]
   onSort?: (key: string) => void
+  sortBy?: string
+  sortDirection?: 'asc' | 'desc'
   onRowClick?: (row: TableData) => void
   loading?: boolean
   emptyMessage?: string
@@ -25,6 +27,8 @@ function Table({
   columns,
   data,
   onSort,
+  sortBy: _sortBy,
+  sortDirection: _sortDirection,
   onRowClick,
   loading = false,
   emptyMessage = 'No data available'

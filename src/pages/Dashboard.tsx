@@ -15,7 +15,7 @@ const ENDPOINTS = {
 
 const DEFAULT_PAGE = 1
 const DEFAULT_LIMIT = 10
-const EXPORT_LIMIT = 1000
+// const EXPORT_LIMIT = 1000  // Unused but kept for future export functionality
 
 interface DashboardProps {
   onLogout: () => void
@@ -30,7 +30,7 @@ const columns: Column[] = [
 ]
 
 // API Utility Functions
-const fetchMeters = async (limit: number = DEFAULT_LIMIT) => {
+const fetchMeters = async (_limit: number = DEFAULT_LIMIT) => {
   let page = 1
   let allInstallations: any[] = []
   let hasMore = true
@@ -118,7 +118,7 @@ function Dashboard({ onLogout }: DashboardProps) {
         if (data?.Summary) {
           setSummary(data.Summary)
         }
-      } catch (err) {
+      } catch (err: any) {
         // Don't show error for 401 as it will redirect
         if (err?.response?.status !== 401) {
           console.error('Failed to fetch stats:', err)

@@ -75,7 +75,7 @@ export const apiRequest = async <T = any>(
       }
       
       // Log errors in development only
-      if (process.env.NODE_ENV === 'development') {
+      if (import.meta.env.MODE === 'development') {
         console.error('API Error:', {
           status: response.status,
           statusText: response.statusText,
